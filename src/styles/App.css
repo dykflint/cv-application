@@ -1,0 +1,269 @@
+#root {
+  max-width: 1280px;
+  width: 595px;
+  height: 842px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+.cv {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+/* INPUT STYLES */
+input {
+  background-color: white;
+  border: none;
+  width: min-content;
+  margin: 0;
+  line-height: 1;
+}
+
+/****************** CV SIDEBAR STYLES ******************/
+.cv-sidebar {
+  flex: 0 0 30%; /* Don't grow or shrink, fixed at 30% */
+  background-color: #f0f0f0; /* optional: for visual testing */
+  color: black;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+  position: relative;
+}
+/* Put padding to the left and right of contact,
+languages, education and soft skills */
+.contact,
+.languages,
+.education,
+.soft-skills {
+  padding-left: 0.5rem;
+  padding-right: 0.3rem;
+}
+/* PICTURE */
+.picture img {
+  width: 100%;
+}
+/* CONTACT */
+.contact {
+  font-size: 0.7rem;
+  /*padding: 0.2rem;*/
+}
+.contact-detail {
+  padding: 0.2rem;
+}
+.contact-logo img {
+  height: 1rem;
+  width: 1rem;
+  vertical-align: middle;
+}
+/* LANGUAGES */
+.languages {
+  font-size: 0.7rem;
+}
+.languages > ul {
+  margin: 0;
+  margin-top: 0.2rem;
+  padding: 0;
+  padding-left: 0.7rem;
+}
+/* EDUCATION */
+.education-container {
+  line-height: 1;
+  padding-bottom: 0.2rem;
+}
+.education-title {
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+.education-duration,
+.education-location {
+  font-size: 0.65rem;
+  font-weight: 200;
+}
+/* SOFT SKILLS */
+.soft-skills {
+  font-size: 0.7rem;
+}
+.soft-skills > ul {
+  margin: 0;
+  margin-top: 0.2rem;
+  padding: 0;
+  padding-left: 0.7rem;
+}
+
+/****************** CV BODY STYLES *********************/
+.cv-body {
+  flex: 1; /* Take up the remaining space */
+  background-color: #ffffff; /* optional: for visual testing */
+  color: black;
+  padding: 1.35rem;
+  text-align: left;
+  /*margin: 0;
+  padding: 0;*/
+}
+.section-title {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #5d797e;
+  text-transform: uppercase;
+  margin: 0;
+}
+/* NAME AND TITLE */
+.name-and-title input {
+  color: #5d797e;
+  font-size: 1;
+  font-weight: bold;
+  position: relative;
+}
+input.first-name {
+  font-weight: 900;
+}
+input.last-name {
+  font-weight: 500;
+}
+input.last-name,
+input.first-name {
+  font-size: 1.7rem;
+}
+input.title {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: black;
+  text-transform: uppercase;
+}
+/* PROFILE */
+.profile {
+}
+.profile-description {
+  font-size: 0.7rem;
+  margin: 0;
+}
+
+/* EXPERIENCES */
+.experiences {
+  width: 100%;
+}
+/* Set margin and padding to 0 to make the experiences more compact */
+.experience ul {
+  margin: 0;
+  padding: 0;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-left: 0.7rem;
+}
+.experience p {
+  margin: 0.5rem auto;
+}
+
+.experience-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.experience-title-location {
+  display: flex;
+  flex-direction: column;
+}
+.job-title,
+.job-duraiton,
+.job-description,
+job-location {
+  color: black;
+}
+.job-title {
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+.job-location {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+.job-duration {
+  font-size: 0.8rem;
+  margin-left: auto;
+}
+.job-description {
+  font-size: 0.7rem;
+}
+/* TECHNICAL SKILLS */
+.technical-skills {
+  height: 20%;
+}
+/* Applies to both category and skills ul */
+.tech-category {
+  padding: 0;
+}
+/* Applies only to category ul  */
+.tech-category {
+  padding-left: 0.7rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin: 0;
+}
+.tech-skills {
+  list-style: none;
+  font-weight: 200;
+}
+
+/* HR (line) STYLES*/
+hr {
+  background-color: #5d797e;
+  height: 1px; /* I set it in px because in rem it disappeared underneath the Techincal Skills section*/
+  border: none;
+  margin: 0;
+}
+hr.short {
+  background-color: #5d797e;
+  width: 15%;
+  height: 0.2rem;
+  margin: 0;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  margin-right: auto;
+}
+
+/************** EDIT BEHAVIOR **************/
+/* EDIT BUTTON */
+.edit-button {
+  font-size: 13px;
+  font-weight: bold;
+  background-color: #615fff;
+  cursor: pointer;
+  border: none;
+  opacity: 1;
+  transition: opacity 0.3s;
+  pointer-events: auto; /* Allow clicking */
+  position: absolute;
+  right: 5%;
+}
+.edit-button:hover {
+  background-color: #d5272d;
+  transition: background-color 0.3s ease-in-out; /* smooth transition */
+}
+.hovered {
+  background-color: #edf6ff;
+  padding: 0.3rem;
+}
+
+/* EDIT FORM */
+.edit-form {
+  position: fixed;
+  background-color: #dc6a5c;
+  padding: 2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; /* Let it appear above the CV */
+}
+/* Change sections when the button */
+/* MISCELLANEOUS */
+.edit-button.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+.hide {
+  display: none;
+}
