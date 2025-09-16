@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import EditButton from './EditButton';
+import InputField from './InputField';
+
 function AddLanguage({ language, fluency }) {
   return (
     <li className={language}>
-      {language} ({fluency})
+      <InputField initialvalue={`${language} (${fluency})`} />
     </li>
   );
 }
@@ -11,7 +12,6 @@ function AddLanguage({ language, fluency }) {
 export default function Languages() {
   return (
     <div className="languages">
-      <EditButton props={{ languages: 'Languages:' }} />
       <p className="section-title">Languages</p>
       <hr />
       <ul>

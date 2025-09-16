@@ -6,6 +6,11 @@
   padding: 0;
   text-align: center;
 }
+/* Hightlight selection in a different background-color
+than default */
+*::selection {
+  background-color: #ffc927;
+}
 .cv {
   display: flex;
   flex-direction: row;
@@ -15,11 +20,31 @@
 input {
   background-color: white;
   border: none;
-  width: min-content;
   margin: 0;
   line-height: 1;
 }
-
+input:focus,
+input:hover {
+  background-color: #edf6ff !important;
+  padding: 0.3rem;
+  border: none;
+  outline: none;
+}
+/* EDITABLE FIELDS */
+.editable:focus,
+.editable:hover {
+  background-color: #edf6ff;
+  padding: 0.3rem;
+  margin: 0.3rem;
+  border: none;
+  outline: none;
+}
+.editable:empty::before {
+  /* Not working because when empty there is still
+  a <br> inside the element. However, this can be handled
+  within the code */
+  content: attr(data-placeholder);
+}
 /****************** CV SIDEBAR STYLES ******************/
 .cv-sidebar {
   flex: 0 0 30%; /* Don't grow or shrink, fixed at 30% */
@@ -42,13 +67,32 @@ languages, education and soft skills */
   padding-right: 0.3rem;
 }
 /* PICTURE */
-.picture img {
+.picture {
   width: 100%;
+  position: relative;
+}
+.change-picture,
+.change-picture:focus,
+.change-picture:hover {
+  position: absolute;
+  left: 50%;
+  top: 5px;
+  padding: 0.5rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  z-index: 2;
+  background-color: #615fff;
 }
 /* CONTACT */
 .contact {
   font-size: 0.7rem;
-  /*padding: 0.2rem;*/
+}
+.contact input {
+  background-color: #f0f0f0;
+  width: 80%;
+  display: inline;
+  color: black;
+  font-size: 0.7rem;
 }
 .contact-detail {
   padding: 0.2rem;
@@ -60,6 +104,11 @@ languages, education and soft skills */
 }
 /* LANGUAGES */
 .languages {
+  font-size: 0.7rem;
+}
+.languages input {
+  background-color: #f0f0f0;
+  color: black;
   font-size: 0.7rem;
 }
 .languages > ul {
@@ -81,9 +130,17 @@ languages, education and soft skills */
 .education-location {
   font-size: 0.65rem;
   font-weight: 200;
+  background-color: #f0f0f0;
+  color: black;
+  padding: 0;
 }
 /* SOFT SKILLS */
 .soft-skills {
+  font-size: 0.7rem;
+}
+.soft-skills input {
+  background-color: #f0f0f0;
+  color: black;
   font-size: 0.7rem;
 }
 .soft-skills > ul {
@@ -111,9 +168,13 @@ languages, education and soft skills */
   margin: 0;
 }
 /* NAME AND TITLE */
+.name-and-title > * {
+  padding: 0;
+  margin: 0;
+}
 .name-and-title input {
   color: #5d797e;
-  font-size: 1;
+  font-size: 1rem;
   font-weight: bold;
   position: relative;
 }
@@ -128,16 +189,19 @@ input.first-name {
   font-size: 1.7rem;
 }
 input.title {
+  width: 100%;
   margin: 0;
   font-size: 0.9rem;
   font-weight: 500;
   color: black;
   text-transform: uppercase;
 }
+
 /* PROFILE */
 .profile {
 }
 .profile-description {
+  height: 150px;
   font-size: 0.7rem;
   margin: 0;
 }
@@ -168,9 +232,9 @@ input.title {
   flex-direction: column;
 }
 .job-title,
-.job-duraiton,
+.job-duration,
 .job-description,
-job-location {
+.job-location {
   color: black;
 }
 .job-title {
@@ -183,7 +247,7 @@ job-location {
 }
 .job-duration {
   font-size: 0.8rem;
-  margin-left: auto;
+  text-align: right;
 }
 .job-description {
   font-size: 0.7rem;
@@ -192,19 +256,28 @@ job-location {
 .technical-skills {
   height: 20%;
 }
+.technical-skills:children {
+  color: black;
+}
 /* Applies to both category and skills ul */
 .tech-category {
   padding: 0;
+}
+.tech-category input {
+  color: black;
+  font-weight: bold;
 }
 /* Applies only to category ul  */
 .tech-category {
   padding-left: 0.7rem;
   font-size: 0.8rem;
-  font-weight: bold;
   margin: 0;
 }
 .tech-skills {
   list-style: none;
+}
+.tech-skills div {
+  width: 100%;
   font-weight: 200;
 }
 

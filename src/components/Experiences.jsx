@@ -1,25 +1,33 @@
 import { useState } from 'react';
-import EditButton from './EditButton';
+import InputField from './InputField';
+import EditableField from './EditableField';
 function AddExperience({ jobTitle, jobLocation, jobDescription, jobDuration }) {
   return (
     <div className="experience">
-      <EditButton
-        props={{
-          jobTitle: 'Job Title:',
-          jobLocation: 'Job Location:',
-          jobDuration: 'Job Duration:',
-        }}
-      />
       <div className="experience-header">
         <div className="experience-title-location">
-          <span className="job-title">{jobTitle}</span>
-          <span className="job-location">{jobLocation}</span>
+          <InputField
+            inputClass="job-title"
+            inputPlaceholder="Job"
+            initialvalue={jobTitle}
+          ></InputField>
+          <InputField
+            inputClass="job-location"
+            inputPlaceholder="Job location"
+            initialvalue={jobLocation}
+          ></InputField>
         </div>
-        <span className="job-duration">{jobDuration}</span>
+        <InputField
+          inputClass="job-duration"
+          inputPlaceholder={'mm.yyyy-mm.yyyy'}
+          initialvalue={jobDuration}
+        ></InputField>
         <br />
       </div>
       <ul className="job-description">
-        <li>{jobDescription}</li>
+        <li>
+          <EditableField>{jobDescription}</EditableField>
+        </li>
       </ul>
     </div>
   );

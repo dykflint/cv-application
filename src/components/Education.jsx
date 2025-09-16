@@ -1,19 +1,21 @@
 import { useState } from 'react';
-import EditButton from './EditButton';
+import InputField from './InputField';
+import EditableField from './EditableField';
 
 function AddEducation({ title, location, duration }) {
   return (
     <div className="education-container">
-      <EditButton
-        props={{
-          educationTitle: 'Education Title:',
-          educationLocation: 'Education Location:',
-          educationDuration: 'Education Duration:',
-        }}
+      <EditableField addClasses="education-title">{title}</EditableField>
+      <InputField
+        inputClass="education-location"
+        initialvalue={location}
+        inputPlaceholder="Location"
       />
-      <span className="education-title">{title}</span> <br />
-      <span className="education-location">{location}</span>
-      <span className="education-duration"> ({duration})</span>
+      <InputField
+        inputClass="education-duration"
+        initialvalue={duration}
+        inputPlaceholder="Duration"
+      />
     </div>
   );
 }

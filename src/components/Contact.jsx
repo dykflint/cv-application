@@ -1,14 +1,13 @@
 import { useState } from 'react';
-import EditButton from './EditButton';
+import InputField from './InputField';
 
 function AddContactInformation({ contactType, logoLocation, information }) {
   return (
     <div className="contact-detail">
-      <EditButton props={{ contactType: contactType }} />
       <span className="contact-logo">
         <img src={logoLocation} alt="" />
       </span>{' '}
-      <span className="contact-information">{information}</span>
+      <InputField inputClass="contact-information" initialvalue={information} />
     </div>
   );
 }

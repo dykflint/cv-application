@@ -1,14 +1,19 @@
 import { useLayoutEffect, useState } from 'react';
-import EditButton from './EditButton';
-
+import InputField from './InputField';
+import EditableField from './EditableField';
 function AddSkill({ category, skills }) {
   return (
     <ul className="tech-category">
-      <EditButton props={{ techCategory: 'Category: ', skills: 'Skills:' }} />
       <li>
-        {category}
+        <InputField
+          inputPlaceholder="Category"
+          inputClass="tech-category"
+          initialvalue={category}
+        ></InputField>
         <ul className="tech-skills">
-          <li>{skills}</li>
+          <li>
+            <EditableField>{skills}</EditableField>
+          </li>
         </ul>
       </li>
     </ul>
@@ -34,7 +39,7 @@ export default function TechSkills() {
       <AddSkill
         key="scientific-skills"
         category="Scientific"
-        skills="High-Performance computing, numerical analysis, simulation pipeliens"
+        skills="High-Performance computing, numerical analysis, simulation pipelines"
       />
     </div>
   );

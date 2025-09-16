@@ -1,14 +1,17 @@
 import { useState } from 'react';
-import EditButton from './EditButton';
+import InputField from './InputField';
 
 function AddSoftSkill({ skill }) {
-  return <li>{skill}</li>;
+  return (
+    <li>
+      <InputField initialvalue={skill} inputPlaceholder="Soft Skill" />
+    </li>
+  );
 }
 
 export default function SoftSkills() {
   return (
     <div className="soft-skills">
-      <EditButton props={{ softSkills: 'Soft Skills:' }} />
       <p className="section-title">Soft Skills</p>
       <ul key="soft-skills">
         <AddSoftSkill key="scientific-programming" skill="Scientific Programming" />
