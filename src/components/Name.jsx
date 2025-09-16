@@ -11,14 +11,14 @@ export default function Name({ firstName, lastName }) {
         <InputField
           type="text"
           inputPlaceholder="First Name"
-          initialvalue="Konstantin"
+          initialvalue=""
           inputClass="first-name"
         />
         <br />
         <InputField
           type="text"
           inputPlaceholder="Last Name"
-          initialvalue="Tamoev"
+          initialvalue=""
           inputClass="last-name"
         />
         <InputField
