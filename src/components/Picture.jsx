@@ -1,7 +1,5 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
-// TODO: separate the change picture feature into
-// another component and add the show on hover option
 export default function Picture({ imgLocation }) {
   const [imageSrc, setImageSsrc] = useState(imgLocation);
   const [hovered, setHovered] = useState(false);

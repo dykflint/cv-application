@@ -10,7 +10,8 @@ import Education from './Education';
 import SoftSkills from './SoftSkills';
 import Picture from './Picture';
 import EditForm from './EditForm';
-
+// TODO: add a form to submit changes
+// TODO: include add and remove buttons for the sections
 function App() {
   return (
     <div className="cv">
